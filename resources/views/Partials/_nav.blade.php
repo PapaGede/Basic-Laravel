@@ -15,6 +15,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/contact">Contact</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/posts/create">Create</a>
+      </li>
       </li>
       </ul>
       <ul style="position:absolute;right:90px" class="nav navbar-nav navbar-right">
