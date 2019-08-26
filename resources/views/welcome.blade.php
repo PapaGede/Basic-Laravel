@@ -13,7 +13,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-8">
         <div class="post">
           <h3>Post Title</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi tempora asperiores dolorum, commodi similique dicta maiores maxime ratione laudantium nemo in expedita dolore, rem illum facere quae exercitationem beatae eum.</p>
@@ -38,7 +38,7 @@
           <a href ="#" class="btn btn-primary">Read More</a>    
         </div><hr>
     </div>
-    <div class="col-md-3 col-md-offset-1">
+    <div class="col-md-3 offset-md-1">
       <h2>Sidebar</h2>
       .<div class="jumbotron jumbotron-fluid">
         <div class="container-fluid">
