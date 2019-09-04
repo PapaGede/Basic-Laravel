@@ -15,7 +15,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts=Post::all();
+        return view('posts.index')->withPosts($posts);
     }
 
     /**
@@ -63,7 +64,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return view('posts.show');
+        $post=Post::find($id);
+        return view('posts.show')->withPost($post);
     }
 
     /**
@@ -74,7 +76,11 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        //find the post in the database and represent by a variable
+        $post=Post::find($id);
+        // return the view and pass in the var
+        return view('posts.edit')->withPost($post);
+
     }
 
     /**
@@ -86,7 +92,25 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //validate the form
+        $this->validate($request,array(
+            'title'=>'required|max:255',
+            'body'=> 'required'
+        ));
+
+        //save data into the database
+        $post = Post::find($id);
+
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+
+        $post->save();
+
+        //set flash data to post.show
+        Session::flash('Success','The blog post was successfully updated!');
+
+        //redirect with flash data to post.show
+        return redirect()->route('posts.show',$post->id);
     }
 
     /**
@@ -97,6 +121,16 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //Locates the post in the database
+        $post=Post::find($id);
+
+        //Deletes the post from the database
+        $post->delete();
+
+        //sets a flash message
+        Session::flash('Success','The blog post was successfully Deleted!');
+
+        //redirects with flash message to posts.index
+        return redirect()->route('posts.index');
     }
 }
