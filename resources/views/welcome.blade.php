@@ -7,7 +7,7 @@
       <div class="jumbotron">
         <h1>Welcome To My Blog</h1>
         <p class="lead">Thank you for visiting my page. It was made in Laravel</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Latest Post</a></p>
+        <p><a class="btn btn-primary btn-lg" href="/posts" role="button">Latest Posts</a></p>
       </div>
     </div>
   </div>
