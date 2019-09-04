@@ -17,3 +17,5 @@ Route::get('about','PagesController@getAbout');
 Route::get('/','PagesController@getIndex');
 
 Route::resource('posts','PostController');
+
+date_default_timezone_set('GMT');
