@@ -18,6 +18,9 @@
                              {{Form::submit('Delete',array('class'=>'btn btn-danger btn-block'))}}
                              {{Form::close()}}
                             </div>   
+                        <div class="col-md-12">
+                                {{Html::linkRoute('posts.index','<< Back',array(),array('class'=>'btn btn-primary btn-block btn-h1-spacing'))}}
+                        </div>    
                 </div>
                      
                 </div>

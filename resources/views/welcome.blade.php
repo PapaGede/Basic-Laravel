@@ -13,31 +13,19 @@
   </div>
 
   <div class="row">
-    <div class="col-md-8">
+      <div class="col-md-8">
         <div class="post">
-          <h3>Post Title</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi tempora asperiores dolorum, commodi similique dicta maiores maxime ratione laudantium nemo in expedita dolore, rem illum facere quae exercitationem beatae eum.</p>
-          <a href ="#" class="btn btn-primary">Read More</a>    
-        </div><hr>
+            @foreach($posts as $post)
+              <h3>{{ $post->title}}</h3>
+            <p class="lead">{{ substr($post->body, 0, 50)}}{{ strlen($post->body)>50 ? "...":""}}</p>
+            <small style="text-align:left" class="text-muted">Created at: {{date('M j, Y h:ia',strtotime($post->created_at))}}</small><br>
+            <a href ="{{route('posts.show', $post->id) }}" class="btn btn-primary">View</a>    
+                    <hr>
+                    @endforeach
+            </div>       
+              </div>
 
-        <div class="post">
-          <h3>Post Title</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi tempora asperiores dolorum, commodi similique dicta maiores maxime ratione laudantium nemo in expedita dolore, rem illum facere quae exercitationem beatae eum.</p>
-          <a href ="#" class="btn btn-primary">Read More</a>    
-        </div><hr>
-
-        <div class="post">
-          <h3>Post Title</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi tempora asperiores dolorum, commodi similique dicta maiores maxime ratione laudantium nemo in expedita dolore, rem illum facere quae exercitationem beatae eum.</p>
-          <a href ="#" class="btn btn-primary">Read More</a>    
-        </div><hr>
-
-        <div class="post">
-          <h3>Post Title</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi tempora asperiores dolorum, commodi similique dicta maiores maxime ratione laudantium nemo in expedita dolore, rem illum facere quae exercitationem beatae eum.</p>
-          <a href ="#" class="btn btn-primary">Read More</a>    
-        </div><hr>
-    </div>
+        
     <div class="col-md-3 offset-md-1">
       <h2>Sidebar</h2>
       .<div class="jumbotron jumbotron-fluid">

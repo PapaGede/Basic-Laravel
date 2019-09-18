@@ -16,8 +16,7 @@
                     {{Form::textarea('body',null,array('class'=>'form-control'))}}
                         <small style="text-align:left" class="text-muted">Created at:{{date('M j, Y h:ia',strtotime($post->created_at))}}</small>
                         <div class="row">
-                            <div class="col-sm-6">
-                                
+                            <div class="col-sm-6"> 
                                 {{Html::linkRoute('posts.show','Cancel',array($post->id),array('class'=>'btn btn-danger btn-block'))}}
                             </div>
                             <div class="col-sm-6">
